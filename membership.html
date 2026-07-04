@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Membership Flow</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .page { display: none; padding: 20px; }
+    .active { display: block; }
+    .center { text-align: center; margin-top: 50px; }
+    .membership-btn {
+      margin: 10px;
+      padding: 10px 20px;
+      background: #28a745;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    /* Modal styling */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+    .modal-content {
+      background: #fff;
+      padding: 20px;
+      width: 300px;
+      border-radius: 8px;
+      text-align: center;
+    }
+    .modal-content input {
+      width: 90%;
+      padding: 8px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .login-btn {
+      margin-top: 15px;
+      padding: 10px 20px;
+      background: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    .error-message {
+      color: red;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Home Page -->
+  <div id="home" class="page active center">
+    <h1>Choose Membership</h1>
+    <button class="membership-btn" onclick="openMembership('Premium')">Premium Membership</button>
+    <button class="membership-btn" onclick="openMembership('Normal')">Normal Membership</button>
+  </div>
+
+  <!-- Membership Details Page -->
+  <div id="membership" class="page center">
+    <h2 id="membershipTitle"></h2>
+    <p id="membershipDetails"></p>
+    <button class="membership-btn" onclick="makePayment()">Make Payment</button>
+    <p id="paymentStatus"></p>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="loginModal" class="modal">
+    <div class="modal-content">
+      <h2>Log In</h2>
+      <input type="text" id="name" placeholder="Name">
+      <input type="email" id="email" placeholder="Email">
+      <input type="password" id="password" placeholder="Password">
+      <input type="tel" id="phone" placeholder="Phone Number">
+      <button class="login-btn" onclick="login()">Log In</button>
+      <p id="errorMsg" class="error-message"></p>
+    </div>
+  </div>
+
+  <script>
+    let loggedIn = false;
+    let selectedMembership = "";
+
+    function openMembership(type) {
+      selectedMembership = type;
+      if (!loggedIn) {
+        document.getElementById("loginModal").style.display = "flex";
+      } else {
+        showMembershipPage();
+      }
+    }
+
+    function login() {
+      const name = document.getElementById("name").value.trim();
+      const email = document.getElementById("email").value.trim();
+      const password = document.getElementById("password").value.trim();
+      const phone = document.getElementById("phone").value.trim();
+
+      if (!name || !email || !password || !phone) {
+        document.getElementById("errorMsg").innerText = "Please fill in the information";
+        return;
+      }
+
+      loggedIn = true;
+      document.getElementById("loginModal").style.display = "none";
+      showMembershipPage();
+    }
+
+    function showMembershipPage() {
+      document.getElementById("membershipTitle").innerText = selectedMembership + " Membership";
+      document.getElementById("membershipDetails").innerText =
+        selectedMembership === "Premium"
+          ? "Premium Membership includes full access, priority support, and exclusive perks."
+          : "Normal Membership includes standard access and community support.";
+      showPage("membership");
+    }
+
+    function makePayment() {
+      document.getElementById("paymentStatus").innerText = "Payment Successful!";
+    }
+
+    function showPage(pageId) {
+      document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
+      document.getElementById(pageId).classList.add("active");
+    }
+  </script>
+
+</body>
+</html>
