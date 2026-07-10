@@ -31,7 +31,7 @@
     <div class="mbs-box">
         
      <h2 class="mbs-title" onclick="openpayment('Basic')">Basic Membership</h2>
-     <p class="mbs-price">$9.99/month</p>
+     <p class="mbs-price">RM9.99/month</p>
      <p class="mbs-desc">Kickstart Your Journey
          Perfect for casual gym-goers or those just starting their fitness journey. Enjoy high-quality 
          equipment, clean locker room facilities, and a welcoming environment to hit your foundational goals.</p>
@@ -42,7 +42,7 @@
         <div class="mbs-box">
     
      <h2 class="mbs-title" onclick="openpayment('Standard')">Standard Membership</h2>
-     <p class="mbs-price">$29.99/month</p>
+     <p class="mbs-price">RM29.99/month</p>
       <p class="mbs-desc">The Standard Membership 
             is our most popular choice, offering 24/7 facility access and an upgraded class-booking 
             experience. Enjoy an extended 7-day advance booking window for all weekly group fitness classes .</p>
@@ -54,7 +54,7 @@
     
     <div class="mbs-box">
       <h2 class="mbs-title" onclick="openpayment('Premium')">Premium Membership</h2>
-      <p class="mbs-price">$49.99/month</p>
+      <p class="mbs-price">RM49.99/month</p>
       <p class="mbs-desc">Designed for those who demand the absolute best for their health and 
             wellness. Enjoy luxury recovery zone access (spa-like amenities), 
             custom monthly personal training, and complimentary towel service.</p>
@@ -87,7 +87,7 @@
         <hr>
         <div class="payment-littleboxes">
             <span class="mbs-title plan-name">Plan Name</span>
-            <span class="mbs-price plan-price">$19.99</span>
+            <span class="mbs-price plan-price">RM19.99</span>
         </div>
        
      </div>
@@ -96,15 +96,15 @@
       <h3 class="paymentc2-header"> Credit Card Payment</h3>
      <form id="paymentForm" onsubmit="event.preventDefault(); makePayment();">
         <div class="pinput-box">
-            <label for="cardNumber">Card Number</label>
+            <label for="cardNumber">Card Number: </label>
             <input type="text" id="cardNumber" placeholder="123 1234 123" maxlength="19" required>
         </div>
         <div class="pinput-box">
-            <label for="expiry-date">Expiry Date</label>
+            <label for="purchase-date">Purchase Date: </label>
             <input type="text" id="expiry-date" placeholder="DD/MM/YY" maxlength="8" required>
         </div>
         <div class="pinput-box">
-            <label for="cvv">CVV</label>
+            <label for="cvv">CVV: </label>
             <input type="text" id="cvv" placeholder="123" maxlength="3" required>
         </div>
 
@@ -164,7 +164,7 @@ function login (){
         document.getElementsByClassName("error-msg")[0].style.display = "block";
         return; }
 
-      localStorage.setItem("username", name);
+      localStorage.setItem("Username", name);
       updateUIForLoggedInUser(name);
       document.getElementById("loginModal").style.display = "none";
       showPaymentPage();
@@ -190,13 +190,13 @@ function showPaymentPage(){
     document.querySelector(".plan-name").innerText = membership_chosen + " Membership";
 
     if (membership_chosen == "Basic") {
-        document.querySelector(".plan-price").innerText = "$19.99/month";
+        document.querySelector(".plan-price").innerText = "RM19.99/month";
     }
     else if (membership_chosen == "Standard"){
-        document.querySelector(".plan-price").innerText = "$29.99/month";
+        document.querySelector(".plan-price").innerText = "RM29.99/month";
     }
     else if (membership_chosen == "Premium"){
-        document.querySelector(".plan-price").innerText = "$49.99/month";
+        document.querySelector(".plan-price").innerText = "RM49.99/month";
     }
     
     showPage("payment_page");
@@ -239,7 +239,7 @@ function showPage(pageId) {
 
 function closeModal() {
     document.getElementById("loginModal").style.display = "none";
-    document.getElementById("errorMsg").innerText = "";
+    document.getElementById("errorMsg").innerText = "Please fill in the blanks";
 }
 </script>
 </body>
