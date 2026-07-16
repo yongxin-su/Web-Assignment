@@ -56,7 +56,7 @@
       <h2 class="mbs-title" onclick="openpayment('Premium')">Premium Membership</h2>
       <p class="mbs-price">RM49.99/month</p>
       <p class="mbs-desc">Designed for those who demand the absolute best for their health and 
-            wellness. Enjoy luxury recovery zone access (spa-like amenities), 
+            wellness. Enjoy luxury recovery zone access , 
             custom monthly personal training, and complimentary towel service.</p>
       <p class="mbs-footer">Get instant access to exclusive tools and expert guides.</p>
     </div>
@@ -83,11 +83,10 @@
     <button class="payment-backbtn" onclick="showPage('membership')">← Go Back</button>
     <div class="payment-parent">
        <div class="payment-child1">
-        <h3>Payment Summary</h3> 
-        <hr>
+        <h3 class="line">Payment Summary: </h3> 
         <div class="payment-littleboxes">
-            <span class="mbs-title plan-name">Plan Name</span>
-            <span class="mbs-price plan-price">RM19.99</span>
+            <span class="plan-name">Plan Name: </span>
+            <span class="plan-price">RM19.99</span>
         </div>
        
      </div>
@@ -105,7 +104,7 @@
         </div>
         <div class="pinput-box">
             <label for="cvv">CVV: </label>
-            <input type="text" id="cvv" placeholder="123" maxlength="3" required>
+            <input type="text" id="cvv" placeholder="123 000" maxlength="6" required>
         </div>
 
           <button type="submit" class="payment-btn" id="pay_btn"> 
@@ -122,7 +121,7 @@
 let membership_chosen = "";
 
 window.onload = function() {
-     const loggedin = localStorage.getItem("Username");
+     const loggedin = sessionStorage.getItem("Username");
      if (loggedin) {
       updateUIForLoggedInUser(loggedin);
     }
@@ -144,7 +143,7 @@ function updateUIForLoggedInUser (Username){
 
 function openpayment(type){
     membership_chosen = type;
-    const loggedin = localStorage.getItem("Username");
+    const loggedin = sessionStorage.getItem("Username");
 
     if(!loggedin){
         document.getElementById("loginModal").style.display = "flex";
@@ -164,7 +163,7 @@ function login (){
         document.getElementsByClassName("error-msg")[0].style.display = "block";
         return; }
 
-      localStorage.setItem("Username", name);
+      sessionStorage.setItem("Username", name);
       updateUIForLoggedInUser(name);
       document.getElementById("loginModal").style.display = "none";
       showPaymentPage();
@@ -172,16 +171,15 @@ function login (){
 }
 
 function logout(){
-    localStorage.removeItem('Username');
+    sessionStorage.removeItem('Username');
     document.getElementById("userGreeting").innerText = "";
     document.getElementById("logout_btn").style.display = "none";
 
-    document.getElementById("name").value = "";
-    document.getElementById("email").value = "";
-    document.getElementById("password").value = "";
-    document.getElementById("phone").value = "";
+    document.getElementById("loginName").value = "";
+    document.getElementById("loginEmail").value = "";
+    document.getElementById("loginPassword").value = "";
 
-    showpage("membership");
+    showPage("membership");
 
 
 }
@@ -202,8 +200,7 @@ function showPaymentPage(){
     showPage("payment_page");
 
 }
-
-//need some help undertsanding/coding this part 
+ 
 function makePayment() {
     const pay_btn = document.getElementById("pay_btn");
     const btn_text = document.getElementById("btn_text");
@@ -225,7 +222,7 @@ function makePayment() {
         status.innerText = "";
         status.className = "";
         document.getElementById("paymentForm").reset();
-        showpage('membership');
+        showPage('membership');
     }, 2500);
 
  }, 1500);
@@ -241,6 +238,8 @@ function closeModal() {
     document.getElementById("loginModal").style.display = "none";
     document.getElementById("errorMsg").innerText = "Please fill in the blanks";
 }
+
+
 </script>
 </body>
 
