@@ -1,0 +1,55 @@
+:root {
+      --bg:#EAF4FF;
+     --nav-bg: #5e99ff ;
+      --nav-links:#000000;
+
+      --logout-bg: #2d75c3;
+      --logout-text: #ffff;
+
+     --header-bg:#1280fd; 
+      --header-text:#000000;
+
+      --mbs-box-bg:#ffffff;
+      --mbs-title-color: #000; 
+      --mbs-title-hover:#000000f6;
+      --mbs-price-text:#1976D2;
+      --mbs-price-border-btm:#000000;
+      --mbs-desc-text:#000000fc;
+      --mbs-desc-hr:#000000;
+
+      --joinus-bg: #007BFF;
+      --joinus-text: #ffff; 
+
+      --logout-btn-hover:#7d7d7d;
+      --toggle-btn-hover:#7d7d7d8b;
+
+      --toggle-btn:#0000007e;
+    }
+
+[data-theme="dark"] {
+     --bg:#0f172a;
+      --nav-bg: #0f2a45 ;
+      --nav-links:#ffff;
+
+      --logout-bg: #2d75c3;
+      --logout-text: #ffff;
+
+      --header-bg:#051026; 
+      --header-text:#ffff;
+
+      --mbs-box-bg:#000000;
+      --mbs-title-color: #ffff; 
+      --mbs-title-hover:#ffffff;
+      --mbs-price-text:#7bbdff;
+      --mbs-price-border-btm:#fff;
+      --mbs-desc-text:#fff;
+      --mbs-desc-hr:#fff;
+
+     --joinus-bg: #365270;
+     --joinus-text:#000000; 
+
+     --logout-btn-hover:#cacaca;
+
+     --toggle-btn-hover:#b2b2b2;
+     --toggle-btn:#ffff;
+}
