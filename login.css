@@ -1,0 +1,31 @@
+*{box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif;}
+
+body{ margin:0; padding:0;min-height: 100vh; 
+background-image:url('sport-equipment-on-gray-background-260nw-2613203425.png') ; 
+background-repeat: no-repeat; background-size:cover; width:100%;
+display: flex; align-items: center; justify-content: center;}
+
+html, body {overflow: hidden;height: 100%; width: 100%;}
+
+.login-box { background:transparent; padding: 25px 35px; 
+    width: 100%; max-width: 360px; box-shadow: 0 10px 25px;
+    border-radius: 8px; text-align: center;  }
+
+.login-background{ position: fixed; top: 0; left: 0; top:0;width: 100vw;
+    height: 100vh;display: flex; align-items: center; padding: 20px;
+justify-content: center;}
+
+input {padding: 8px 12px; border-radius: 8px;}
+
+.login-title {margin-bottom: 20px; color: #000000; }
+
+.login-input {width: 100%; padding: 20px; margin: 8px 0; border: 1px solid #cbd5e0; 
+    border-radius: 8px; font-size: 1.25rem;}
+
+.login-button { margin-top: 15px; padding: 12px 20px; background: #007BFF;
+ color: white; border: none; border-radius:4px;
+ width: 100%; font-size: 1rem; font-weight: bold; cursor: pointer;}
+
+.login-button:hover {background:#000000;}
+
+.error-msg {color:#d13737; margin-top: 12px; font-size: 0.95rem;display:none;}
