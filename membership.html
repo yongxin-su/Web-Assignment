@@ -19,6 +19,7 @@
     <div class="user-controls">
     <span id="userGreeting" class="user_greeting"></span>
     <button id="logout_btn" class="logout-btn" onclick="logout()">Logout</button>
+    <button id="toggle_btn" class="toggle-btn" onclick="toggle()"> ◐ </button>
   </div>
   </nav>
 
@@ -31,65 +32,98 @@
     <div class="mbs-box">
         
      <h2 class="mbs-title" onclick="openpayment('Basic')">Basic Membership</h2>
-     <p class="mbs-price">RM9.99/month</p>
-     <p class="mbs-desc">Kickstart Your Journey
-         Perfect for casual gym-goers or those just starting their fitness journey. Enjoy high-quality 
-         equipment, clean locker room facilities, and a welcoming environment to hit your foundational goals.</p>
-         
-     <p class="mbs-footer">Get instant access to exclusive tools and expert guides.</p>
+     <p class="mbs-price">RM130</p>
+     <div class="mbs-desc">
+        <ul style="list-style-type: none; text-align: center; ">
+            <li> 
+            <span class="title-price">Registration Fee </span>
+            <span class="price-box">RM 40</span>
+         </li>
+         <hr>
+            <li> 
+                 <span>Card Access Fee </span>
+                 <span>RM 20</span>
+            </li>
+            <hr>
+            <li> 
+                 <span>Monthly Dues </span>
+                 <span>RM 70</span>
+         </li>
+        </ul>
+        <hr>
+        </div>
+     <button class="joinus-button" onclick="openpayment('Basic')">Join Us</button>
     </div>
         
         <div class="mbs-box">
     
-     <h2 class="mbs-title" onclick="openpayment('Standard')">Standard Membership</h2>
-     <p class="mbs-price">RM29.99/month</p>
-      <p class="mbs-desc">The Standard Membership 
-            is our most popular choice, offering 24/7 facility access and an upgraded class-booking 
-            experience. Enjoy an extended 7-day advance booking window for all weekly group fitness classes .</p>
-        
-     <p class="mbs-footer">Get instant access to exclusive tools and expert guides.</p>
+     <h2 class="mbs-title" onclick="openpayment('Standard')"> ★Standard Membership★</h2>
+     <p class="mbs-price">RM250</p>
+      <div class="mbs-desc">
+        <ul style="list-style-type: none; text-align: center;">
+           <li> 
+            <span class="title-price">Registration Fee </span>
+            <span class="price-box">RM 70</span>
+         </li>
+         <hr>
+            <li> 
+                 <span>Card Access Fee </span>
+                 <span>RM 30</span>
+            </li>
+            <hr>
+            <li> 
+                 <span>Monthly Dues </span>
+                 <span>RM 150</span>
+         </li>
+        </ul>
+        <hr>
+        </div>
+            <br>
+     <button class="joinus-button" onclick="openpayment('Standard')">Join Us</button>
         
     </div>
 
     
     <div class="mbs-box">
       <h2 class="mbs-title" onclick="openpayment('Premium')">Premium Membership</h2>
-      <p class="mbs-price">RM49.99/month</p>
-      <p class="mbs-desc">Designed for those who demand the absolute best for their health and 
-            wellness. Enjoy luxury recovery zone access , 
-            custom monthly personal training, and complimentary towel service.</p>
-      <p class="mbs-footer">Get instant access to exclusive tools and expert guides.</p>
+      <p class="mbs-price">RM500</p>
+      <div class="mbs-desc">
+        <ul style="list-style-type: none; text-align: center; ">
+            <li> 
+            <span class="title-price">Registration Fee </span>
+            <span class="price-box">RM 200</span>
+         </li>
+         <hr>
+            <li> 
+                 <span>Card Access Fee </span>
+                 <span>FREE</span>
+            </li>
+            <hr>
+            <li> 
+                 <span>Monthly Dues </span>
+                 <span>RM 300</span>
+         </li>
+        </ul>
+        <hr>
+        </div>
+            <br>
+      <button class="joinus-button" onclick="openpayment('Premium')">Join Us</button>
     </div>
-
- </div>  
-</div>
-<div id="loginModal" class="login-background">
-    <div class="login-box">
-        <span class="close-button" onclick="closeModal()">&times;</span>
-        <h2>Login</h2>
-        <form>
-            <input type="text" id="loginName" placeholder="Name">
-            <input type="email" id="loginEmail" placeholder="Email">
-            <input type="password" id="loginPassword" placeholder="Password">
-            <button type="button" class="login-button" onclick="login()">Login</button>
-            <p id="errorMsg" class="error-msg">Please fill in all the blanks</p>
-        </form>
-    </div>
-
-</div>
+  </div>
+ </div>
+ 
 
 
  <div id="payment_page" class="page">
     <button class="payment-backbtn" onclick="showPage('membership')">← Go Back</button>
     <div class="payment-parent">
-       <div class="payment-child1">
+         <div class="payment-child1">
         <h3 class="line">Payment Summary: </h3> 
         <div class="payment-littleboxes">
             <span class="plan-name">Plan Name: </span>
-            <span class="plan-price">RM19.99</span>
+            <span class="plan-price">RM130</span>
         </div>
-       
-     </div>
+    </div>
      
      <div class="payment-child2">
       <h3 class="paymentc2-header"> Credit Card Payment</h3>
@@ -121,7 +155,7 @@
 let membership_chosen = "";
 
 window.onload = function() {
-     const loggedin = sessionStorage.getItem("Username");
+     const loggedin = localStorage.getItem("Username");
      if (loggedin) {
       updateUIForLoggedInUser(loggedin);
     }
@@ -143,43 +177,18 @@ function updateUIForLoggedInUser (Username){
 
 function openpayment(type){
     membership_chosen = type;
-    const loggedin = sessionStorage.getItem("Username");
+    const loggedin = localStorage.getItem("Username");
 
-    if(!loggedin){
-        document.getElementById("loginModal").style.display = "flex";
-    }
-    else{ 
-        showPaymentPage();
-
-    }
-}
-
-function login (){
-    const name = document.getElementById("loginName").value.trim();
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
-
-    if (!name || !email || !password) {
-        document.getElementsByClassName("error-msg")[0].style.display = "block";
-        return; }
-
-      sessionStorage.setItem("Username", name);
-      updateUIForLoggedInUser(name);
-      document.getElementById("loginModal").style.display = "none";
-      showPaymentPage();
    
+    showPaymentPage();
+
+    
 }
+
 
 function logout(){
-    sessionStorage.removeItem('Username');
-    document.getElementById("userGreeting").innerText = "";
-    document.getElementById("logout_btn").style.display = "none";
-
-    document.getElementById("loginName").value = "";
-    document.getElementById("loginEmail").value = "";
-    document.getElementById("loginPassword").value = "";
-
-    showPage("membership");
+    localStorage.removeItem('Username');
+    window.location.href = "login.html";
 
 
 }
@@ -188,19 +197,20 @@ function showPaymentPage(){
     document.querySelector(".plan-name").innerText = membership_chosen + " Membership";
 
     if (membership_chosen == "Basic") {
-        document.querySelector(".plan-price").innerText = "RM19.99/month";
+        document.querySelector(".plan-price").innerText = "RM130";
     }
     else if (membership_chosen == "Standard"){
-        document.querySelector(".plan-price").innerText = "RM29.99/month";
+        document.querySelector(".plan-price").innerText = "RM250";
     }
     else if (membership_chosen == "Premium"){
-        document.querySelector(".plan-price").innerText = "RM49.99/month";
+        document.querySelector(".plan-price").innerText = "RM500 ";
     }
     
     showPage("payment_page");
 
 }
- 
+
+//need some help undertsanding/coding this part 
 function makePayment() {
     const pay_btn = document.getElementById("pay_btn");
     const btn_text = document.getElementById("btn_text");
@@ -234,12 +244,19 @@ function showPage(pageId) {
 }
 
 
-function closeModal() {
-    document.getElementById("loginModal").style.display = "none";
-    document.getElementById("errorMsg").innerText = "Please fill in the blanks";
+function toggle() {
+    
+    const current = document.documentElement.getAttribute('data-theme')
+    const newtheme = current === 'dark' ? 'light' : 'dark';
+
+    document.documentElement.setAttribute('data-theme' , newtheme );
+    localStorage.setItem('theme', newtheme);
 }
+
 
 
 </script>
 </body>
+
+
 
