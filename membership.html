@@ -249,7 +249,7 @@ function toggle() {
     const current = document.documentElement.getAttribute('data-theme')
     const newtheme = current === 'dark' ? 'light' : 'dark';
 
-    document.documentElement.setAttribute('data-theme' , newtheme );
+    document.documentElement.setAttribute('dark-theme' , newtheme );
     localStorage.setItem('theme', newtheme);
 }
 
