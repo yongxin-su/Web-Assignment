@@ -26,7 +26,7 @@
       --toggle-btn:#0000007e;
     }
 
-[data-theme="dark"] {
+[dark-theme="dark"] {
      --bg:#0f172a;
       --nav-bg: #0f2a45 ;
       --nav-links:#ffff;
