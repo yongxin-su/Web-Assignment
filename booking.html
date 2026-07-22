@@ -11,18 +11,19 @@
 
 <div id="booking_page_wrapper">
     
-<nav class="navigate">
-    <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="membership.html">Membership</a></li>
-        <li><a href="booking.html" style="color: #ffffff; font-weight: bold;">Booking</a></li>
-        <li><a href="about.html">About Us</a></li>
-    </ul>
-    <div class="user-controls">
-        <span id="userGreeting" class="user_greeting"></span>
-        <button id="logout_btn" class="logout-btn" onclick="logout()">Logout</button>
-    </div>
-</nav>
+    <!-- Shared Navigation Bar -->
+    <nav class="navigate">
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="booking.html" style="color: #ffffff; font-weight: bold;">Booking</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+        <div class="user-controls">
+            <span id="userGreeting" class="user_greeting"></span>
+            <button id="logout_btn" class="logout-btn" onclick="logout()">Logout</button>
+        </div>
+    </nav>
 
     <!-- Header Section -->
     <header class="headerclass">
@@ -30,60 +31,62 @@
     </header>
 
     <div class="booking-container">
-        <!-- TRAINERS SECTION -->
-<section class="trainers-section">
-    <h2 class="section-title">Meet Our Expert Trainers</h2>
-    <div class="trainers-grid">
         
-        <!-- Trainer Card 1 -->
-        <div class="trainer-card">          
-<img src="meerqeen.png" alt="Photo of Trainer Meerqeen" class="trainer-img">
-            <div class="trainer-info">
-                <h3>Meerqeen</h3>
-                <p class="specialty">Strength & Conditioning</p>
-                <p class="experience"><strong>Experience:</strong> 3 Years</p>
-                <p class="certs"><strong>Certifications:</strong> NASM-PES, FITM, FISAF Malaysia</p>
+        <!-- ================= TRAINERS SECTION ================= -->
+        <section class="trainers-section">
+            <h2 class="section-title">Meet Our Expert Trainers</h2>
+            <div class="trainers-grid">
+                
+                <!-- Trainer Card 1 -->
+                <div class="trainer-card">          
+                    <img src="meerqeen.png" alt="Photo of Trainer Meerqeen" class="trainer-img">
+                    <div class="trainer-info">
+                        <h3>Meerqeen</h3>
+                        <p class="specialty">Strength & Conditioning</p>
+                        <p class="experience"><strong>Experience:</strong> 3 Years</p>
+                        <p class="certs"><strong>Certifications:</strong> NASM-PES, FITM, FISAF Malaysia</p>
+                    </div>
+                </div>
+
+                <!-- Trainer Card 2 -->
+                <div class="trainer-card"> 
+                    <img src="sarahlee.jpg" alt="Photo of Trainer" class="trainer-img">
+                    <div class="trainer-info">
+                        <h3>Sarah Lee</h3>
+                        <p class="specialty">Yoga & Flexibility</p>
+                        <p class="experience"><strong>Experience:</strong> 4 Years</p>
+                        <p class="certs"><strong>Certifications:</strong> RYT-500 Certified Yoga Alliance Trainer</p>
+                    </div>
+                </div>
+
+                <!-- Trainer Card 3 -->
+                <div class="trainer-card">
+                    <img src="maxwatson.png" alt="Photo of Trainer Max Watson" class="trainer-img">
+                    <div class="trainer-info">
+                        <h3>Max Watson</h3>
+                        <p class="specialty">HIIT & Cardio Engine</p>
+                        <p class="experience"><strong>Experience:</strong> 4 Years</p>
+                        <p class="certs"><strong>Certifications:</strong> ACE Personal Trainer, TRX Certified</p>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </section>
 
-        <!-- Trainer Card 2 -->
-        <div class="trainer-card"> 
-<img src="sarahlee.jpg" alt="Photo of Trainer" class="trainer-img">
-            <div class="trainer-info">
-                <h3>Sarah Lee</h3>
-                <p class="specialty">Yoga & Flexibility</p>
-                <p class="experience"><strong>Experience:</strong> 4 Years</p>
-                <p class="certs"><strong>Certifications:</strong> RYT-500 Certified Yoga Alliance Trainer</p>
-            </div>
-        </div>
-
-        <!-- Trainer Card 3 -->
-        <div class="trainer-card">
-<img src="maxwatson.png" alt="Photo of Trainer Max Watson" class="trainer-img">
-            <div class="trainer-info">
-                <h3></h3>
-                <p class="specialty">HIIT & Cardio Engine</p>
-                <p class="experience"><strong>Experience:</strong> 4 Years</p>
-                <p class="certs"><strong>Certifications:</strong> ACE Personal Trainer, TRX Certified</p>
-            </div>
-        </div>
-
-    </div>
-</section>
-
-        <!-- CLASS SCHEDULE SECTION  -->
+        <!-- ================= CLASS SCHEDULE SECTION ================= -->
         <section class="schedule-section">
             <h2 class="section-title">Weekly Class Schedule</h2>
             
             <!-- Category Filter Buttons -->
             <div class="filter-container">
                 <button class="filter-btn active" onclick="filterClasses('all')">Show All</button>
-                <button class="filter-btn" onclick="filterClasses('strength')">Strength</button>
+                <!-- Fixed visual kerning issue by ensuring clean rendering -->
+                <button class="filter-btn" style="letter-spacing: normal;" onclick="filterClasses('strength')">Strength</button>
                 <button class="filter-btn" onclick="filterClasses('yoga')">Yoga</button>
                 <button class="filter-btn" onclick="filterClasses('hiit')">HIIT</button>
             </div>
 
-            <!-- Classes Container -->
+            <!-- Classes Grid Container -->
             <div class="classes-grid" id="classesGrid">
                 
                 <!-- Class 1: Strength -->
@@ -122,7 +125,7 @@
             </div>
         </section>
 
-        <!--  BOOKING FORM SECTION  -->
+        <!-- ================= BOOKING FORM SECTION ================= -->
         <section class="booking-form-section" id="bookingFormSection">
             <h2 class="section-title">Reserve Your Spot</h2>
             <div class="booking-box">
@@ -168,6 +171,6 @@
     </div>
 </div>
 
-<script src="script.js"></script>
+<script src="booking.js"></script>
 </body>
 </html>
