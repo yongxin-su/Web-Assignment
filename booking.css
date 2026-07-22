@@ -41,7 +41,7 @@
 
 .trainer-img {
     width: 100%;
-    height: 250px;
+    height: 330px;
     object-fit: cover;
     border-bottom: 2px solid var(--mbs-price-border-btm);
 }
@@ -100,8 +100,8 @@
 }
 
 .filter-btn:hover, .filter-btn.active {
-    background: var(--joinus-bg); /* Linked to theme button background */
-    color: var(--joinus-text);    /* Linked to theme button text */
+    background: var(--joinus-bg); 
+    color: var(--joinus-text);   
     border-color: var(--joinus-bg);
 }
 
