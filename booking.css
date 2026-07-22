@@ -1,4 +1,3 @@
-/* Container Spacing */
 .booking-container {
     max-width: 1200px;
     margin: 40px auto;
@@ -9,7 +8,7 @@
     text-align: center;
     font-size: 2.2rem;
     margin-bottom: 30px;
-    color: #000000;
+    color: var(--mbs-title-color); 
     font-family: Cambria, Georgia, serif;
     font-weight: bold;
 }
@@ -25,15 +24,14 @@
     gap: 30px;
 }
 
-
 .trainer-card {
-    background: #FFED29; 
+    background: var(--mbs-box-bg); 
     border-radius: 4px;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
-    border: 2px solid #000000;
+    border: 2px solid var(--mbs-price-border-btm); 
     transition: transform 0.3s ease;
 }
 
@@ -43,9 +41,9 @@
 
 .trainer-img {
     width: 100%;
-    height: 350px;
+    height: 250px;
     object-fit: cover;
-    border-bottom: 2px solid #000000;
+    border-bottom: 2px solid var(--mbs-price-border-btm);
 }
 
 .trainer-info {
@@ -55,13 +53,13 @@
 
 .trainer-info h3 {
     font-size: 1.4rem;
-    color: #000000;
+    color: var(--mbs-title-color);
     margin-bottom: 5px;
     font-weight: bold;
 }
 
 .specialty {
-    color: #FF5C00; 
+    color: var(--mbs-price-text); 
     font-weight: bold;
     font-size: 1rem;
     margin-bottom: 12px;
@@ -69,7 +67,7 @@
 
 .trainer-info p {
     font-size: 0.9rem;
-    color: #000000;
+    color: var(--mbs-desc-text); 
     line-height: 1.4;
     margin-bottom: 6px;
 }
@@ -79,6 +77,7 @@
     margin-bottom: 60px;
 }
 
+/* Class Filter Buttons */
 .filter-container {
     display: flex;
     justify-content: center;
@@ -89,18 +88,21 @@
 
 .filter-btn {
     padding: 10px 20px;
-    border: 2px solid #000000;
+    border: 2px solid var(--mbs-price-border-btm);
     border-radius: 4px;
-    background: #000000;
-    color: #FF5C00;
+    background: var(--mbs-box-bg);
+    color: var(--mbs-title-color);
     font-weight: bold;
     cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: normal; 
     transition: all 0.2s ease;
 }
 
 .filter-btn:hover, .filter-btn.active {
-    background: #FFED29;
-    color: #000000;
+    background: var(--joinus-bg); /* Linked to theme button background */
+    color: var(--joinus-text);    /* Linked to theme button text */
+    border-color: var(--joinus-bg);
 }
 
 .classes-grid {
@@ -110,10 +112,10 @@
 }
 
 .class-card {
-    background: #FFED29; 
+    background: var(--mbs-box-bg); 
     padding: 25px;
     border-radius: 4px;
-    border: 2px solid #000000;
+    border: 2px solid var(--mbs-price-border-btm);
     box-shadow: 0 4px 15px rgba(0,0,0,0.15);
     display: flex;
     flex-direction: column;
@@ -129,31 +131,32 @@
     font-size: 0.75rem;
     font-weight: bold;
     border-radius: 4px;
-    border: 1px solid #000000;
+    border: 1px solid var(--mbs-price-border-btm);
 }
 
-.strength-badge { background: #000000; color: #FF5C00; }
-.yoga-badge { background: #ffffff; color: #000000; }
-.hiit-badge { background: #FF5C00; color: #ffffff; }
+
+.strength-badge { background: var(--mbs-price-border-btm); color: var(--mbs-box-bg); }
+.yoga-badge { background: var(--bg); color: var(--mbs-title-color); }
+.hiit-badge { background: var(--mbs-price-text); color: #ffffff; border-color: var(--mbs-price-text); }
 
 .class-card h3 {
     margin-top: 15px;
     font-size: 1.4rem;
-    color: #000000;
+    color: var(--mbs-title-color);
     margin-bottom: 8px;
     font-weight: bold;
 }
 
 .class-time {
     font-size: 0.9rem;
-    color: #be4702;
+    color: var(--mbs-price-text);
     font-weight: bold;
     margin-bottom: 12px;
 }
 
 .class-desc-short, .class-desc-full {
     font-size: 0.95rem;
-    color: #000000;
+    color: var(--mbs-desc-text);
     line-height: 1.5;
     margin-bottom: 15px;
     flex-grow: 1;
@@ -162,7 +165,7 @@
 .read-more-btn {
     background: none;
     border: none;
-    color: #FF5C00;
+    color: var(--mbs-price-text);
     cursor: pointer;
     text-align: center;
     font-weight: bold;
@@ -173,14 +176,14 @@
 }
 
 .read-more-btn:hover {
-    color: #000000;
+    color: var(--mbs-title-hover);
     text-decoration: underline;
 }
 
 .book-this-btn {
-    background-color: #000000;
-    color: #FF5C00;
-    border: none;
+    background-color: var(--joinus-bg);
+    color: var(--joinus-text);
+    border: 2px solid var(--joinus-bg);
     padding: 12px;
     font-weight: bold;
     border-radius: 4px;
@@ -189,15 +192,15 @@
 }
 
 .book-this-btn:hover {
-    background-color: #FF5C00;
-    color: #ffffff;
+    background-color: transparent;
+    color: var(--joinus-bg);
 }
 
 /* BOOKING FORM */
 .booking-box {
-    background: #FFED29;
+    background: var(--mbs-box-bg);
     border-radius: 4px;
-    border: 2px solid #000000;
+    border: 2px solid var(--mbs-price-border-btm);
     box-shadow: 0 4px 20px rgba(0,0,0,0.15);
     max-width: 750px;
     margin: 0 auto;
@@ -226,7 +229,7 @@
 .form-group label {
     font-size: 0.95rem;
     font-weight: bold;
-    color: #000000;
+    color: var(--mbs-title-color);
     margin-bottom: 6px;
     text-align: left;
 }
@@ -235,24 +238,25 @@
 .form-group select, 
 .form-group textarea {
     padding: 10px 14px;
-    border: 1px solid #000000;
+    border: 1px solid var(--mbs-price-border-btm);
     border-radius: 4px;
     font-size: 0.95rem;
     outline: none;
     font-family: Arial, sans-serif;
-    background-color: #ffffff;
+    background-color: var(--bg); 
+    color: var(--mbs-desc-text);
 }
 
 .form-group input:focus, 
 .form-group select:focus, 
 .form-group textarea:focus {
-    border-color: #FF5C00;
-    box-shadow: 0 0 5px rgba(255, 92, 0, 0.5);
+    border-color: var(--mbs-price-text);
+    box-shadow: 0 0 5px var(--mbs-price-text);
 }
 
 .booking-submit-btn {
-    background: #000000;
-    color: #FF5C00;
+    background: var(--joinus-bg);
+    color: var(--joinus-text);
     border: none;
     padding: 14px;
     font-size: 1.05rem;
@@ -266,8 +270,7 @@
 }
 
 .booking-submit-btn:hover {
-    background: #FF5C00;
-    color: #ffffff;
+    opacity: 0.85; 
 }
 
 /* Validation Status Messages */
@@ -283,7 +286,7 @@
     background-color: #36b90e;
     padding: 12px;
     border-radius: 4px;
-    border: 1px solid #000000;
+    border: 1px solid #238507;
 }
 
 .booking-status-msg.error {
@@ -291,5 +294,5 @@
     background-color: #d13737;
     padding: 12px;
     border-radius: 4px;
-    border: 1px solid #000000;
+    border: 1px solid #9c2525;
 }
