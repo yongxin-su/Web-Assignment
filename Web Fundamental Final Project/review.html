@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page - Membership </title>
+    <link rel="stylesheet" href="review.css">
+</head>
+
+<body>
+ <div id="membership" class="page active">
+  <nav class="navigate page.active">
+    <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="membership.html">Membership</a></li>
+        <li><a href="booking.html">Booking</a></li>
+        <li><a href="about.html">About Us</a></li>
+    </ul>
+    <div class="user-controls">
+    <span id="userGreeting" class="user_greeting"></span>
+    <button id="logout_btn" class="logout-btn" >Logout</button>
+    <button id="toggle_btn" class="toggle-btn"> ◐ </button>
+  </div>
+  </nav>
+
+  <header class="headerclass"><h1>Reviews</h1></header>
+  <br>
+ <div class="review-container">
+    <div class="add-one-more">
+      <div class="rw-avg-container">
+        <h2>Customer Reviews</h2>
+        <br>
+        <h3 class="avg-score">Total Average: </h3>
+        <span class="avg-text">0</span>
+     </div>
+
+     <div class="row-container">
+         <div class="row-bar">
+            <span>5 ★</span>
+            <div class="progress-bar"><div class="progress" id="bar-5"></div></div>
+            <span class="count" id="count-5">0</span>
+          </div>
+
+          <div class="row-bar">
+            <span>4 ★</span>
+            <div class="progress-bar"><div class="progress" id="bar-4"></div></div>
+            <span class="count" id="count-4">0</span>
+          </div>
+          
+          <div class="row-bar">
+          <span>3 ★</span><div class="progress-bar"><div class="progress" id="bar-3"></div></div>
+          <span class="count" id="count-3">0</span>
+          </div>
+
+          <div class="row-bar">
+            <span>2 ★</span>
+            <div class="progress-bar"><div class="progress" id="bar-2"></div></div>
+            <span class="count" id="count-2">0</span>
+          </div>
+        
+          <div class="row-bar">
+            <span>1 ★</span>
+            <div class="progress-bar"><div class="progress" id="bar-1"></div></div>
+            <span class="count" id="count-1">0</span>
+          </div>
+        </div>
+     </div>
+        </div>
+    </div>
+
+ <br><br>
+
+  <div class="review-container">
+    <p>Please leave a review</p>
+     
+     <div class="rating">
+      <input type="radio" id="star5" name="rating"value="5" required>
+          <label for="star5">★</label>
+      <input type="radio" id="star4" name="rating" value="4" required>
+          <label for="star4">★</label>
+      <input type="radio" id="star3" name="rating" value="3" required>
+          <label for="star3">★</label>
+      <input type="radio"  id="star2" name="rating" value="2" required>
+          <label for="star2">★</label>
+      <input type="radio" id="star1" name="rating" value="1" required>
+          <label for="star1">★</label>
+     </div>
+    
+     <div class="review-form">
+     <input type="text" id="user-name" placeholder="Your Name" required>
+     <textarea id="user-comment" placeholder="Write your review here..." rows="4" required></textarea>
+     <button type="submit"  class="submit-button">Submit</button>
+     </div>
+    </div>
+
+    <br>
+
+    <div class="comment">
+       <h3>Comments</h3>
+       <div id="comment-list">
+    
+      </div>
+    </div>
+
+    <script src="prototypereview.js" defer></script>
+    <script src="dark mode.js" defer></script>
+</body>
