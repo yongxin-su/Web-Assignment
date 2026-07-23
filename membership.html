@@ -18,8 +18,8 @@
     </ul>
     <div class="user-controls">
     <span id="userGreeting" class="user_greeting"></span>
-    <button id="logout_btn" class="logout-btn" onclick="logout()">Logout</button>
-    <button id="toggle_btn" class="toggle-btn" onclick="toggle()"> ◐ </button>
+    <button id="logout_btn" class="logout-btn" >Logout</button>
+    <button id="toggle_btn" class="toggle-btn"> ◐ </button>
   </div>
   </nav>
 
@@ -31,7 +31,7 @@
     
     <div class="mbs-box">
         
-     <h2 class="mbs-title" onclick="openpayment('Basic')">Basic Membership</h2>
+     <h2 class="mbs-title" data-plan="Basic">Basic Membership</h2>
      <p class="mbs-price">RM130</p>
      <div class="mbs-desc">
         <ul style="list-style-type: none; text-align: center; ">
@@ -52,12 +52,12 @@
         </ul>
         <hr>
         </div>
-     <button class="joinus-button" onclick="openpayment('Basic')">Join Us</button>
+     <button class="joinus-button" data-plan="Basic">Join Us</button>
     </div>
         
         <div class="mbs-box">
     
-     <h2 class="mbs-title" onclick="openpayment('Standard')"> ★Standard Membership★</h2>
+     <h2 class="mbs-title" data-plan="Standard"> ★Standard Membership★</h2>
      <p class="mbs-price">RM250</p>
       <div class="mbs-desc">
         <ul style="list-style-type: none; text-align: center;">
@@ -79,13 +79,13 @@
         <hr>
         </div>
             <br>
-     <button class="joinus-button" onclick="openpayment('Standard')">Join Us</button>
+     <button class="joinus-button"data-plan="Standard" >Join Us</button>
         
     </div>
 
     
     <div class="mbs-box">
-      <h2 class="mbs-title" onclick="openpayment('Premium')">Premium Membership</h2>
+      <h2 class="mbs-title" data-plan="Premium">Premium Membership</h2>
       <p class="mbs-price">RM500</p>
       <div class="mbs-desc">
         <ul style="list-style-type: none; text-align: center; ">
@@ -107,7 +107,7 @@
         <hr>
         </div>
             <br>
-      <button class="joinus-button" onclick="openpayment('Premium')">Join Us</button>
+      <button class="joinus-button" data-plan="Premium" >Join Us</button>
     </div>
   </div>
  </div>
@@ -115,7 +115,7 @@
 
 
  <div id="payment_page" class="page">
-    <button class="payment-backbtn" onclick="showPage('membership')">← Go Back</button>
+    <button id="payment_back_btn" class="payment-backbtn" >← Go Back</button>
     <div class="payment-parent">
          <div class="payment-child1">
         <h3 class="line">Payment Summary: </h3> 
@@ -127,7 +127,7 @@
      
      <div class="payment-child2">
       <h3 class="paymentc2-header"> Credit Card Payment</h3>
-     <form id="paymentForm" onsubmit="event.preventDefault(); makePayment();">
+     <form id="paymentForm">
         <div class="pinput-box">
             <label for="cardNumber">Card Number: </label>
             <input type="text" id="cardNumber" placeholder="123 1234 123" maxlength="19" required>
@@ -150,113 +150,6 @@
     </div>
 </div>
 
-<script>
-
-let membership_chosen = "";
-
-window.onload = function() {
-     const loggedin = localStorage.getItem("Username");
-     if (loggedin) {
-      updateUIForLoggedInUser(loggedin);
-    }
-};
-
-function updateUIForLoggedInUser (Username){
-    const user_greeting = document.getElementById("userGreeting");
-    if (user_greeting){
-        user_greeting.innerText = "Hello, " + Username;
-    }
-
-    const logout_btn = document.getElementById("logout_btn");
-    if (logout_btn){
-        logout_btn.style.display = "inline-block";
-
-}
-}
-
-
-function openpayment(type){
-    membership_chosen = type;
-    const loggedin = localStorage.getItem("Username");
-
-   
-    showPaymentPage();
-
-    
-}
-
-
-function logout(){
-    localStorage.removeItem('Username');
-    window.location.href = "login.html";
-
-
-}
-
-function showPaymentPage(){
-    document.querySelector(".plan-name").innerText = membership_chosen + " Membership";
-
-    if (membership_chosen == "Basic") {
-        document.querySelector(".plan-price").innerText = "RM130";
-    }
-    else if (membership_chosen == "Standard"){
-        document.querySelector(".plan-price").innerText = "RM250";
-    }
-    else if (membership_chosen == "Premium"){
-        document.querySelector(".plan-price").innerText = "RM500 ";
-    }
-    
-    showPage("payment_page");
-
-}
-
-//need some help undertsanding/coding this part 
-function makePayment() {
-    const pay_btn = document.getElementById("pay_btn");
-    const btn_text = document.getElementById("btn_text");
-    const status = document.getElementById("status");
-
-    pay_btn.disabled = true;
-    btn_text.style.display = "none";
-    status.innerText = "";
-
-    setTimeout(() => {
-        btn_text.style.display = "inline";
-        btn_text.innerText = "Success!";
-        status.className = "success";
-        status.innerText = "Payment Successful! Redirecting back to membership page.";
-    
-    setTimeout(() => {
-        pay_btn.disabled = false;
-        btn_text.innerText = "Pay Securely";
-        status.innerText = "";
-        status.className = "";
-        document.getElementById("paymentForm").reset();
-        showPage('membership');
-    }, 2500);
-
- }, 1500);
-}
-
-function showPage(pageId) {
-        document.querySelectorAll(".page").forEach(p => p.classList.remove("active"));
-        document.getElementById(pageId).classList.add("active");
-}
-
-
-function toggle() {
-    
-    const current = document.documentElement.getAttribute('data-theme')
-    const newtheme = current === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('dark-theme' , newtheme );
-    localStorage.setItem('theme', newtheme);
-}
-
-
-
-</script>
+<script src="membership.js" ></script>
 </body>
-
-
 
