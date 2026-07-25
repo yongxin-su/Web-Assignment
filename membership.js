@@ -118,15 +118,6 @@ function showPage(pageId) {
 }
 
 
-function toggle() {
-    
-    const current = document.documentElement.getAttribute('dark-theme')
-    const newtheme = current === 'dark' ? 'light' : 'dark';
-
-    document.documentElement.setAttribute('dark-theme' , newtheme );
-    localStorage.setItem('theme', newtheme);
-}
-
 
 
 
