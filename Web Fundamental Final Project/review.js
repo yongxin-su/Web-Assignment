@@ -1,7 +1,7 @@
 
 document.addEventListener("DOMContentLoaded", () => {
-  const ratingContainer = document.querySelector(".rating");
-  const starLabels = ratingContainer ? ratingContainer.querySelectorAll("label") : [];
+  const ratingContainer = document.querySelector(".rating"); //select all classes that has rating
+  const starLabels = ratingContainer ? ratingContainer.querySelectorAll("label") : []; // put into list - easier indexing
   const starInputs = ratingContainer ? ratingContainer.querySelectorAll("input[type='radio']") : [];
 
   starInputs.forEach((input, index) => {
@@ -91,23 +91,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const averageScore = totalReviews > 0 ? (weightedSum / totalReviews).toFixed(1) : "0.0";
 
-    const avgTextEl = document.querySelector(".avg-text");
-    if (avgTextEl) {
-      avgTextEl.textContent = averageScore;
+    const avgtext = document.querySelector(".avg-text");
+    if (avgtext) {
+      avgtext.textContent = averageScore;
     }
 
     for (let rating = 1; rating <= 5; rating++) {
       const count = reviewData[rating];
-      const countEl = document.getElementById(`count-${rating}`);
-      const progressBarEl = document.getElementById(`bar-${rating}`);
+      const countstar = document.getElementById(`count-${rating}`);
+      const progressBar = document.getElementById(`bar-${rating}`);
 
-      if (countEl) {
-        countEl.textContent = count;
+      if (countstar) {
+        countstar.textContent = count;
       }
 
-      if (progressBarEl) {
+      if (progressBar) {
         const percentage = totalReviews > 0 ? (count / totalReviews) * 100 : 0;
-        progressBarEl.style.width = `${percentage}%`;
+        progressBar.style.width = `${percentage}%`;
       }
     }
   }
