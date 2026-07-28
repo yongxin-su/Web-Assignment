@@ -1,23 +1,23 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const savedName = localStorage.getItem("rememberedName");
-    const savedEmail = localStorage.getItem("rememberedEmail");
+    const savedName = localStorage.getItem("rememberName");
+    const savedEmail = localStorage.getItem("rememberEmail");
 
     if (savedName && savedEmail) {
-        document.getElementById("loginName").value = savedName;
-        document.getElementById("loginEmail").value = savedEmail;
+        document.getElementById("loginname").value = savedName;
+        document.getElementById("loginemail").value = savedEmail;
         document.getElementById("rememberMe").checked = true;
     }
 
 
-    const loginForm = document.getElementById("loginForm");
-    if (loginForm) {
-        loginForm.addEventListener("submit", (event) => {
+    const loginform = document.getElementById("loginform");
+    if (loginform) {
+        loginform.addEventListener("submit", (event) => {
             event.preventDefault();
             login();
         });
     }
 
-    const inputs = document.querySelectorAll("#loginForm input");
+    const inputs = document.querySelectorAll("#loginform input");
     inputs.forEach(input => {
         input.addEventListener("input", () => {
             const errorMsg = document.getElementById("errorMsg");
@@ -33,9 +33,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 function login() {
-    const name = document.getElementById("loginName").value.trim();
-    const email = document.getElementById("loginEmail").value.trim();
-    const password = document.getElementById("loginPassword").value.trim();
+    const name = document.getElementById("loginname").value.trim();
+    const email = document.getElementById("loginemail").value.trim();
+    const password = document.getElementById("loginpassword").value.trim();
     const rememberMe = document.getElementById("rememberMe").checked;
     const errorMsg = document.getElementById("errorMsg");
 
@@ -52,22 +52,22 @@ function login() {
     localStorage.setItem("Username", name);
 
     if (rememberMe) {
-        localStorage.setItem("rememberedName", name);
-        localStorage.setItem("rememberedEmail", email);
+        localStorage.setItem("rememberName", name);
+        localStorage.setItem("rememberEmail", email);
     } else {
-        localStorage.removeItem("rememberedName");
-        localStorage.removeItem("rememberedEmail");
+        localStorage.removeItem("rememberName");
+        localStorage.removeItem("rememberEmail");
     }
 
     window.location.href = "home.html";
 }
 
-function closeModal() {
-    const loginModal = document.getElementById("loginModal");
+function closeModel() {
+    const loginModel = document.getElementById("loginModel");
     const errorMsg = document.getElementById("errorMsg");
 
-    if (loginModal) {
-        loginModal.style.display = "none";
+    if (loginModel) {
+        loginModel.style.display = "none";
     }
     if (errorMsg) {
         errorMsg.innerText = "Please fill in the blanks";
@@ -76,11 +76,11 @@ function closeModal() {
 
 function forgotPassword(event) {
     event.preventDefault();
-    const email = document.getElementById("loginEmail").value.trim();
+    const email = document.getElementById("loginemail").value.trim();
 
     if (!email) {
         alert("Please enter your email address first so we can send a reset link.");
-        document.getElementById("loginEmail").focus();
+        document.getElementById("loginemail").focus();
         return;
     }
 
