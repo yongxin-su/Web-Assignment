@@ -108,4 +108,4 @@ margin-bottom: 15px; box-shadow: 0 2px 2px var(--box-shadow);}
 
 .comment-text{line-height: 1.4; word-break: break-word; color:#000000}
 
-.comment-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;}
+.comment-name { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px;}
