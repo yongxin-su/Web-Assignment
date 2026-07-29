@@ -1,4 +1,4 @@
-
+//put the star in container, and check the star, and then click on the star instead of the round circle (button)
 document.addEventListener("DOMContentLoaded", () => {
   const ratingContainer = document.querySelector(".rating"); //select all classes that has rating
   const starLabels = ratingContainer ? ratingContainer.querySelectorAll("label") : []; // put into list - easier indexing
@@ -13,6 +13,26 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+  function addCommentToDOM(author, rating, text) {
+    if (!commentList) return;
+
+    const commentBox = document.createElement("div");
+    commentBox.className = "comment-box";
+
+    const filledStars = "★".repeat(rating);
+    const emptyStars = "☆".repeat(5 - rating);
+
+    commentBox.innerHTML =`
+      <div class="comment-header">
+        <strong>${clean(author)}</strong>
+        <span class="comment-stars">${filledStars}${emptyStars}</span>
+      </div>
+      <p class="comment-text">${clean(text)}</p>
+     `;
+
+    commentList.prepend(commentBox);
+  }
+  
   const reviewData = {
     5: 0,
     4: 0,
@@ -59,25 +79,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 
-  function addCommentToDOM(author, rating, text) {
-    if (!commentList) return;
 
-    const commentBox = document.createElement("div");
-    commentBox.className = "comment-box";
-
-    const filledStars = "★".repeat(rating);
-    const emptyStars = "☆".repeat(5 - rating);
-
-    commentBox.innerHTML =`
-      <div class="comment-header">
-        <strong>${escapeHTML(author)}</strong>
-        <span class="comment-stars">${filledStars}${emptyStars}</span>
-      </div>
-      <p class="comment-text">${escapeHTML(text)}</p>
-     `;
-
-    commentList.prepend(commentBox);
-  }
 
   function updateReviewStats() {
     let totalReviews = 0;
@@ -112,7 +114,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  function escapeHTML(str) {
+  function clean(str) {
     return str.replace(/[&<>'"]/g, 
       tag => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[tag] || tag)
     );
