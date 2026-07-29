@@ -24,6 +24,13 @@
       --toggle-btn-hover:#7d7d7d8b;
 
       --toggle-btn:#0000007e;
+      --box-shadow:#000000;
+
+      --review-container:#b5e6fa;
+      --contact:#f4f9ff;
+      --contact-form:#7abaff;
+      --contact-button:#cbe5ff;
+ 
     }
 
 [dark-theme="dark"] {
@@ -52,4 +59,8 @@
 
      --toggle-btn-hover:#b2b2b2;
      --toggle-btn:#ffff;
+      --box-shadow:#ffffff;
+     --contact:#061a2e;
+     --contact-form:#03284d;
+     --contact-button:#2f68a1;
 }
