@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const emptyStars = "☆".repeat(5 - rating);
 
     commentBox.innerHTML =`
-      <div class="comment-header">
+      <div class="comment-name">
         <strong>${clean(author)}</strong>
         <span class="comment-stars">${filledStars}${emptyStars}</span>
       </div>
