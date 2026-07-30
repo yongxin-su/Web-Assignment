@@ -30,10 +30,12 @@
       --contact:#f4f9ff;
       --contact-form:#7abaff;
       --contact-button:#cbe5ff;
+      --review:#b5e6fa;
+      --progress:#0f266a;
  
     }
 
-[dark-theme="dark"] {
+html.dark {
      --bg:#0f172a;
       --nav-bg: #0f2a45 ;
       --nav-links:#ffff;
@@ -63,4 +65,6 @@
      --contact:#061a2e;
      --contact-form:#03284d;
      --contact-button:#2f68a1;
+           --review:#051026;
+     --progress:#d4deff;
 }
