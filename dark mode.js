@@ -30,3 +30,7 @@ function toggle() {
   applyTheme(newtheme);
    
 }
+const toggle_btn = document.querySelector('#toggle_btn'); 
+  if (toggle_btn) {
+    toggle_btn.addEventListener('click', toggle);
+  }
