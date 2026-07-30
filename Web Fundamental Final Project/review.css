@@ -1,4 +1,4 @@
-@import url('dark-mode.css');
+@import url('dark mode.css');
 *{box-sizing: border-box; margin: 0; padding: 0; font-family: Arial, sans-serif;}
 
 body{background-color:var(--bg);}
