@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Page - About Us</title>
+    <link rel="stylesheet" href="membership.css">
+    <link rel="stylesheet" href="about.css">
+    <script src="dark mode.js"></script>
+</head>
+<body>
+
+<div id="about_page_wrapper">
+
+    <!-- Shared Navigation Bar -->
+    <nav class="navigate">
+        <ul class="nav-links">
+            <li><a href="home.html">Home</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="about.html" style="color: #ffffff; font-weight: bold;">About Us</a></li>
+        </ul>
+        <div class="user-controls">
+            <span id="userGreeting" class="user_greeting"></span>
+            <button id="logout_btn" class="logout-btn">Logout</button>
+            <button id="toggle_btn" class="toggle-btn"> ◐ </button>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="headerclass">
+        <h1>About Us</h1>
+    </header>
+
+    <div class="about-container">
+
+        <!-- TEAM SECTION -->
+        <section class="team-section">
+            <h2 class="section-title">Meet The Team</h2>
+
+            <div class="team-grid">
+
+                <!-- Member 1 -->
+                <div class="team-card">
+                    <img src="member1.jpg" alt="Photo of Bernice Siew Yong Xin" class="team-img">
+                    <div class="team-info">
+                        <h3>Bernice Siew Yong Xin</h3>
+                        <a href="home.html" class="team-link">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card">
+                    <img src="member2.jpg" alt="Photo of Ilyas Iskandar Bin Sahrizam" class="team-img">
+                    <div class="team-info">
+                        <h3>Ilyas Iskandar Bin Sahrizam</h3>
+                        <a href="home.html" class="team-link">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card">
+                    <img src="member3.jpg" alt="Photo of Kirill Sadykov" class="team-img">
+                    <div class="team-info">
+                        <h3>Kirill Sadykov</h3>
+                        <a href="home.html" class="team-link">View Profile</a>
+                    </div>
+                </div>
+
+                <!-- Member 4 -->
+                <div class="team-card">
+                    <img src="member4.jpg" alt="Photo of Alyssa Teh Yi Ting" class="team-img">
+                    <div class="team-info">
+                        <h3>Alyssa Teh Yi Ting</h3>
+                        <a href="home.html" class="team-link">View Profile</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <!-- Shared Footer -->
+    <footer>
+        <div class="contact">
+            <h1 class="media-h1">Contact Us</h1>
+
+            <div class="contact-info">
+                <h3 class="media-h3">Contact Information</h3>
+                <p class="media-p">For any inquiries or assistance, please reach out to us through the following contact information:</p>
+                <br>
+                <ul class="media-ul">
+                    <li>Email: dynamicfitness@company.com</li>
+                    <li>Phone: +1 (234) 567-890</li>
+                    <li>Address: Petaling Main Street</li>
+                </ul>
+
+                <h3 class="media-h3">Business Hours</h3>
+                <p class="media-p">Our business hours are as follow:</p>
+                <br>
+                <ul class="media-ul">
+                    <li>Monday to Friday: 9:00 AM - 11:00 PM</li>
+                    <li>Saturday to Sunday: 7:00 AM - 9:00 PM</li>
+                </ul>
+
+                <h3 class="media-h3">Social Media</h3>
+                <img src="Instagram.png">
+            </div>
+
+            <div class="contact-form">
+                <h3 class="media-h3">Contact Form</h3>
+                <form class="media-form">
+                    <label for="name">Full Name: </label>
+                    <input type="text" id="name" name="name" required>
+                    <label for="email">Email: </label>
+                    <input type="email" id="email" name="email" required>
+                    <label for="phone number">Phone Number: </label>
+                    <input type="tel" id="phone number" name="phone number" required>
+                    <label for="message">Message: </label>
+                    <textarea id="message" name="message" rows="4" required></textarea>
+                    <input type="submit" class="media-submit-button" value="Submit">
+                </form>
+            </div>
+        </div>
+    </footer>
+
+</div>
+
+<script src="about.js"></script>
+</body>
+</html>
