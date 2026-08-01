@@ -68,3 +68,18 @@ html.dark {
            --review:#051026;
      --progress:#d4deff;
 }
+
+[data-theme="dark"]{
+  --bg:#050506;
+  --bg-alt:#0d0d11;
+  --panel:#141419;
+  --steel:#25252d;
+  --paper:#f2f3f6;
+  --paper-dim:#9a9aa6;
+  --blue:#2f6bff;
+  --blue-deep:#173e9c;
+  --blue-bright:#6b96ff;
+  --overlay:rgba(5,5,6,0.88);
+  --tag-bg:rgba(5,5,6,0.75);
+  --pattern-a:#14151c;
+  --pattern-b:#101117;
