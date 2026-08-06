@@ -1,0 +1,215 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title> Alyssa's Portfolio </title>
+  <style>
+    :root {
+        --primary-color: #4a90e2;
+        --accent-color: #f5a623;
+        --bg-color: #83aff7;
+    }
+    .personalInfo {
+        margin-top: 20px;
+        margin: 20px auto; 
+        padding: 15px;              
+        width: 80%;                  
+        border: 2px solid #44327d;   
+        border-radius: 10px;        
+        background-color: #ffffff;  
+        box-shadow: 0 0 10px rgba(0,0,0,0.1); 
+    }
+    @import url('https://fonts.googleapis.com/css2?family=Monsterrat:wght@400;700&display=swap');
+    .personalInfo h2 {
+        font-family: 'Monsterrat', sans-serif;
+    }
+    .personalInfo p {
+        font-family: 'Monsterrat', sans-serif;
+    }
+    body {
+        font-family: 'Monsterrat', sans-serif;
+        background: var(--bg-color);
+        color: #000000;
+        margin: 0;
+        padding: 0;
+    }
+    header {
+        text-align: center;
+        background: var(--primary-color);
+        color: rgb(41, 39, 155);
+        padding: 2px;
+        animation: fadeIn 1.5s ease-in;
+    }
+    .profilePic {
+        display: block;
+        margin: 0 auto;       
+        width: 150px;         
+        height: 150px;        
+        border-radius: 50%;   
+        object-fit: cover;    
+        border: 3px solid var(--primary-color);
+    }
+    table {
+        width: 80%;
+        margin: 20px auto;
+        border-collapse: collapse;
+        background: #ffffff;
+        box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    th, td {
+        border: 1px solid #44327d;
+        padding: 10px;
+        text-align: left;
+    }
+
+    th {
+        background-color: #c7d2ff;
+        color: #000;
+    }
+    footer {
+        display: flex;
+        justify-content: center; 
+        padding: 20px;
+        gap:20px;
+    }
+    .back-btn {
+        background: #4a90e2;
+        border: none;
+        padding: 10px 20px;
+        color: white;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        text-decoration: none;
+    }
+    .back-btn:hover {
+        background: #357ab8;
+    }
+    .cv-btn {
+        background: var(--accent-color);
+        border: none;
+        padding: 1px 2px;
+        color: rgb(23, 34, 137);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+    .cv-btn:hover {
+        background: #6b5fd9;
+    }
+
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    </style>
+  </head>
+  <body>
+    <div id="content">
+    <header>
+        <img src="member4.jpg" alt="Alyssa Profile Picture" class="profilePic">
+        <h1> Alyssa Teh Yi Ting </h1>
+        <p> Web Developer for the Gym website </p>
+    </header>
+    <div class="personalInfo">
+        <h2>Personal Information</h2>
+        <p>Age: 20 <br>
+            Nationality: Malaysian <br>
+            Hobbies: Reading, Travelling, Playing Games <br>
+            Email: 23078058@imail.sunway.edu.my <br>
+            Pre-Uni Education: CIMP
+        </p>
+    </div>
+<table>
+    <tr>
+    <th>About me</th>
+    <td>I'm Alyssa one of the web developer for our gym website alongside my 3 other colleagues Bernice, Ilyas and Kira</td>
+  </tr>
+  <tr>
+    <th>Education background</th>
+    <td>
+        Bachelor of Cybersecurity, Sunway University <br>
+        Diploma in Information Technology, Sunway University
+    </td>
+  </tr>
+  <tr>
+    <th>Skills</th>
+    <td>
+        HTML 95% <br>
+        Python 90% <br>
+        MySQL 80% <br>
+        Javascript 70%
+    </td>
+    </tr>
+    <tr>
+        <th>Projects</th>
+        <td>
+        Gym Website<br>
+        Portfolio Website
+        </td>
+    </tr>
+</table>
+</div>
+<footer>
+    <a href="about_us.html" class="back-btn">Back</a>
+    <button class="cv-btn" onclick="downloadPDF()">Download CV</button>
+</footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+<script>
+    function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const doc = new jsPDF();
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(18);
+      doc.text("Alyssa Teh Yi Ting - CV", 20, 20);
+
+      doc.setFont("helvetica", "normal");
+      doc.setFontSize(12);
+      doc.text("Web Developer for the Gym website", 20, 25);
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("Personal Information:", 20, 40);
+      doc.setFont("helvetica", "normal");
+      doc.text("Age: 20", 20, 45);
+      doc.text("Nationality: Malaysian", 20, 50);
+      doc.text("Hobbies: Reading, Travelling, Playing Games", 20, 55);
+      doc.text("Email: 23078058@imail.sunway.edu.my", 20, 60);
+      doc.text("Pre-Uni Education: CIMP", 20, 65);
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("About Me:", 20, 75);
+      doc.setFont("helvetica", "normal");
+      doc.text("I'm Alyssa, one of the web developers for our gym website alongside my 3 other", 20, 80);
+      doc.text("colleagues Bernice, Ilyas, and Kira.", 20, 85);
+      
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("Education Background:", 20, 95);
+      doc.setFont("helvetica", "normal");
+      doc.text("- Bachelor of Cybersecurity, Sunway University", 30, 100);
+      doc.text("- Diploma in Information Technology, Sunway University", 30, 105);
+      
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("Skills:", 20, 115);
+      doc.setFont("helvetica", "normal");
+      doc.text("- HTML 95%", 30, 120);
+      doc.text("- Python 90%", 30, 125);
+      doc.text("- MySQL 80%", 30, 130);
+      doc.text("- JavaScript 70%", 30, 135);
+
+      doc.setFont("helvetica", "bold");
+      doc.setFontSize(14);
+      doc.text("Projects:", 20, 145);
+      doc.setFont("helvetica", "normal");
+      doc.text("- Gym Website", 30, 150);
+      doc.text("- Portfolio Website", 30, 155);
+
+      doc.save("Alyssa_Teh_CV.pdf");
+    }
+  </script>
+</script>
+</body>
+</html>
