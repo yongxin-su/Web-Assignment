@@ -33,7 +33,7 @@ line-height: 1; display:none;}
 .headerclass{ display:flex; background-image:url(blue.jpg); 
     background-repeat: no-repeat; background-size:cover; background-position: center;
     justify-content: center; align-items: center; padding:20px 10px; width:100%;}
-header h1{font-size: 3.00rem; font-weight:600; color:var(--header-text); 
+header h1{font-size: 3.00rem; font-weight:600; color:#000; 
  font-family:Georgia, 'Times New Roman', Times, serif;}
 
  /*Review*/
