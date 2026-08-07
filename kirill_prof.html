@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Kirill Sadykov</title>
+    <link rel="stylesheet" href="membership.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="kirill_profile.css">
+</head>
+<body>
+
+<div id="about_page_wrapper">
+
+    <nav class="navigate">
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="about_us.html" class="nav-active">About Us</a></li>
+        </ul>
+        <div class="user-controls">
+            <span id="userGreeting" class="user_greeting"></span>
+            <button id="logout_btn" class="logout-btn">Logout</button>
+            <button id="toggle_btn" class="toggle-btn"> ◐ </button>
+        </div>
+    </nav>
+
+    <div class="profile-wrapper">
+
+        <section class="profile-header-card">
+            <img src="member3.jpg" alt="Kirill Sadykov" class="profile-avatar">
+            <div class="profile-details">
+                <h1>Kirill Sadykov</h1>
+                <h3>IT Student | Networking &amp; Security</h3>
+                <p>
+                    IT student at Sunway University specializing in Networking and Security, with
+                    hands-on experience building responsive web pages as part of the Dynamic Fitness
+                    platform project. Combines a foundation in secure network design with practical
+                    front-end development and database skills, and enjoys turning technical requirements
+                    into clean, working interfaces.
+                </p>
+                <a href="kirillCv.pdf" download="Kirill_Sadykov_CV.pdf" class="cv-download-btn">Download CV</a>
+            </div>
+        </section>
+
+        <div class="portfolio-grid">
+
+            <section class="portfolio-card">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>Bachelor's Degree in Networking and Security</h3>
+                    <p class="education-subtitle">
+                        Networking &amp; Security
+                    </p>
+                    <p class="education-desc">
+                        Focusing on network infrastructure, cybersecurity principles, and secure system design.
+                    </p>
+                </div>
+            </section>
+
+            <section class="portfolio-card">
+                <h2>Technical Skills</h2>
+
+                <div class="skill-group">
+                    <span>Java</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-net"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span>SQL</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-sec"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span>HTML5</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-web"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span>CSS3</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-sql"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="portfolio-card highlight-card-margin">
+            <h2>Project Highlights</h2>
+            <div class="highlights-grid">
+
+                <div class="highlight-item">
+                    <h3>Homepage Design — Dynamic Fitness Platform</h3>
+                    <p>
+                        Built the site's homepage from scratch, including an animated hero section, a weekly
+                        class line-up grid, a scrolling results marquee, and the membership pricing section.
+                        Used CSS Grid and Flexbox throughout for a fully responsive layout.
+                    </p>
+                </div>
+
+                <div class="highlight-item">
+                    <h3>About Us Page — Dynamic Fitness Platform</h3>
+                    <p>
+                        Designed the team page, including the member card grid with profile photos, names,
+                        and links to individual profile pages.
+                    </p>
+                </div>
+
+                <div class="highlight-item">
+                    <h3>Light / Dark Theme Toggle</h3>
+                    <p>
+                        Implemented a site-wide light/dark mode toggle using CSS custom properties, switching
+                        background, text, and accent colors across every page with one click.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+        <section class="portfolio-card highlight-card-margin">
+            <h2>Key Achievements</h2>
+            <ul class="achievements-list">
+                <li>Delivered two full site pages (Homepage and About Us) from layout to final styling.</li>
+                <li>Built a reusable light/dark theme system driven entirely by CSS variables.</li>
+                <li>Combined coursework in networking &amp; security with practical front-end delivery.</li>
+            </ul>
+        </section>
+
+        <section class="portfolio-card highlight-card-margin">
+            <h2>Interests</h2>
+            <div class="interests-grid">
+                <span class="interest-pill">Web Development</span>
+                <span class="interest-pill">Network Security</span>
+                <span class="interest-pill">UI Design</span>
+                <span class="interest-pill">Problem Solving</span>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="about.js"></script>
+</body>
+</html>
