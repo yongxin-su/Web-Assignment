@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Page - Booking & Trainers</title>
+    <link rel="stylesheet" href="dark mode.css">
     <link rel="stylesheet" href="membership.css">
     <link rel="stylesheet" href="booking.css">
 </head>
@@ -14,13 +15,15 @@
     <!-- Shared Navigation Bar -->
     <nav class="navigate">
         <ul class="nav-links">
-            <li><a href="home.html">Home</a></li>
+            <li><a href="homepage.html">Home</a></li>
             <li><a href="membership.html">Membership</a></li>
             <li><a href="booking.html" style="color: #ffffff; font-weight: bold;">Booking</a></li>
-            <li><a href="about.html">About Us</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="about_us.html">About Us</a></li>
         </ul>
         <div class="user-controls">
             <span id="userGreeting" class="user_greeting"></span>
+            <button id="toggle_btn" class="toggle-btn" aria-label="Toggle light and dark mode">◐</button>
             <button id="logout_btn" class="logout-btn" onclick="logout()">Logout</button>
         </div>
     </nav>
@@ -172,5 +175,6 @@
 </div>
 
 <script src="booking.js"></script>
+<script src="dark mode.js"></script>
 </body>
 </html>
