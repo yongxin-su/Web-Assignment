@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - Ilyas Iskandar Bin Sahrizam</title>
+    <link rel="stylesheet" href="membership.css">
+    <link rel="stylesheet" href="about.css">
+    <link rel="stylesheet" href="ilyas_profile.css">
+  
+    
+</head>
+<body>
+
+<div id="about_page_wrapper">
+
+    <nav class="navigate">
+        <ul class="nav-links">
+            <li><a href="homepage.html">Home</a></li>
+            <li><a href="membership.html">Membership</a></li>
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="review.html">Review</a></li>
+            <li><a href="about_us.html" class="nav-active">About Us</a></li>
+        </ul>
+        <div class="user-controls">
+            <span id="userGreeting" class="user_greeting"></span>
+            <button id="logout_btn" class="logout-btn">Logout</button>
+            <button id="toggle_btn" class="toggle-btn"> ◐ </button>
+        </div>
+    </nav>
+
+    <div class="profile-wrapper">
+
+        <section class="profile-header-card">
+            <img src="member2.jpg" alt="Ilyas Iskandar Bin Sahrizam" class="profile-avatar">
+            <div class="profile-details">
+                <h1>Ilyas Iskandar Bin Sahrizam</h1>
+                <h3>IT Student | Computer Networking & Security</h3>
+                <p>
+                    Passionate student with a strong focus on computer networking, infrastructure security, and responsive web design. 
+                    Currently handling front-end design, modular CSS structures, and member profiles for the Dynamic Fitness platform project.
+                </p>
+                <a href="ilyasCv.pdf" download="Ilyas_Iskandar_CV.pdf" class="cv-download-btn">Download CV</a>
+            </div>
+        </section>
+
+        <div class="portfolio-grid">
+            
+            <section class="portfolio-card">
+                <h2>Education</h2>
+                <div class="education-item">
+                    <h3>BSc (Hons) Information Technology</h3>
+                    <p class="education-subtitle">
+                        (Computer Networking and Security)
+                    </p>
+                    <p class="education-desc">
+                        Focusing on network configuration, cybersecurity principles, database administration, and web technology integration.
+                    </p>
+                </div>
+            </section>
+
+            <section class="portfolio-card">
+                <h2>Technical Skills</h2>
+                
+                <div class="skill-group">
+                    <span>Programming & Coding</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-net"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span>Network Security & Protocols</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-sec"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span>HTML5 & CSS3 Architecture</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-web"></div>
+                    </div>
+                </div>
+
+                <div class="skill-group">
+                    <span>Database Management (SQL)</span>
+                    <div class="skill-bar-bg">
+                        <div class="skill-bar-fill fill-sql"></div>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+
+        <section class="portfolio-card highlight-card-margin">
+            <h2>Project Highlights</h2>
+            <div class="highlights-grid">
+                
+                <div class="highlight-item">
+                    <h3>Trainers & Class Booking Engine</h3>
+                    <p>
+                        Architected the full <code>booking.html</code> layout utilizing CSS Grid and Flexbox. Designed card components for expert trainers, weekly schedules, and an integrated reservation form.
+                    </p>
+                </div>
+
+                <div class="highlight-item">
+                    <h3>Dynamic JS Filtering & Interactions</h3>
+                    <p>
+                        Implemented custom JavaScript logic for real-time class category filtering, collapsible "Read More" card descriptions, and automated form selection routing.
+                    </p>
+                </div>
+
+                <div class="highlight-item">
+                    <h3>Form Validation & Theme Support</h3>
+                    <p>
+                        Constructed a user reservation form complete with medical condition declarations, status indicators, and full CSS variable support for light/dark mode toggling.
+                    </p>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="about.js"></script>
+</body>
+</html>
