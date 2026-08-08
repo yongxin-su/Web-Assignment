@@ -355,7 +355,7 @@
 
 .contact { display:flex; flex-direction:row; justify-content:center; align-items: center;
  align-items:stretch; width: 100%; border-top: 0.5px solid var( --header-text) ; 
- background-color: var(--bg); border-bottom: 0.5px solid var( --header-text);
+ background-color: var(--bg); 
 flex-wrap:wrap; margin: auto; overflow: hidden; box-sizing: border-box; padding: 5px; }
 
 .contact-info{background-color: transparent;
