@@ -59,7 +59,7 @@ function login() {
         localStorage.removeItem("rememberEmail");
     }
 
-    window.location.href = "home.html";
+    window.location.href = "homepage.html";
 }
 
 function closeModel() {
