@@ -343,7 +343,7 @@
             border:1px solid var(--header-text)
         }
 
-        .media-h1{width: 100%; text-align: center; border-bottom: 2px solid var( --header-text);
+        .media-h1{width: 100%; text-align: center; 
         color: var(--header-text);}
         .media-p {text-align: left;color:var( --header-text); font-size:12px;}
 
